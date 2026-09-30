@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script>try{if(!sessionStorage.getItem('aotLoaded')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},5000)}}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Музыка — Атака Титанов</title>
+  <meta name="description" content="Опенинги и эндинги «Атаки титанов»: смотри и слушай прямо на сайте.">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="../img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Атака Титанов — студенческий проект">
+  <meta property="og:title" content="Музыка — Атака Титанов">
+  <meta property="og:description" content="Опенинги и эндинги «Атаки титанов»: смотри и слушай прямо на сайте.">
+  <meta property="og:url" content="https://baelluu.github.io/attackontitan/music/">
+  <meta property="og:image" content="https://baelluu.github.io/attackontitan/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/enhance.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/inner.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__logo">
+      <img src="./img/logo.png" alt="Attack on Titan">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="../serial/index.html">Сериал</a></li>
+      <li><a href="../characters/index.html">Персонажи</a></li>
+      <li><a href="../music/index.html" class="active">Музыка</a></li>
+      <li><a href="../arts/index.html">Галерея</a></li>
+      <li><a href="../quiz/index.html">Викторина</a></li>
+    </ul>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="navbar__drawer" id="drawer">
+    <a href="../serial/index.html">Сериал</a>
+    <a href="../characters/index.html">Персонажи</a>
+    <a href="../music/index.html">Музыка</a>
+    <a href="../arts/index.html">Галерея</a>
+    <a href="../quiz/index.html">Викторина</a>
+  </div>
+
+  <div class="music-layout">
+
+    <header class="page-hero" style="--hero-img:url('../img/music.webp')">
+      <div class="page-hero__eyebrow">Опенинги и эндинги</div>
+      <h1 class="page-hero__title">Музыка</h1>
+      <p class="page-hero__sub">Мрачная атмосфера мира титанов в звуке: от динамичных опенингов до проникновенных саундтреков.</p>
+    </header>
+
+    <!-- Player -->
+    <section class="player-section">
+      <div class="player-wrap">
+        <video id="mainVideo" class="player-video"
+               src="video/season4/episode2.mkv"
+               controls autoplay></video>
+      </div>
+      <div class="player-info">
+        <span class="player-badge" id="playerBadge">Опенинг · 4 сезон 2 часть</span>
+        <h2 class="player-title" id="playerTitle">The Rumbling</h2>
+      </div>
+    </section>
+
+    <!-- Tracks -->
+    <section class="tracks-section">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Опенинги</h2>
+          <div class="section-title__line"></div>
+        </div>
+
+        <ul class="tracks-grid" id="openingsGrid">
+
+          <li class="track-item" data-type="Опенинг" data-label="1 сезон 1 часть" data-src="video/season1/episode1.mkv">
+            <div class="track-thumb">
+              <img src="img/op1.webp" alt="Guren No Yumiya" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">1 сезон · ч. 1</div>
+              <div class="track-name">Guren No Yumiya</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="1 сезон 2 часть" data-src="video/season2/episode1.mkv">
+            <div class="track-thumb">
+              <img src="img/op2.webp" alt="Jiyuu No Tsubasa" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">1 сезон · ч. 2</div>
+              <div class="track-name">Jiyuu No Tsubasa</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="2 сезон" data-src="video/season2/episode1.mkv">
+            <div class="track-thumb">
+              <img src="img/op3.webp" alt="Shinzou Wo Sasageyo!" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">2 сезон</div>
+              <div class="track-name">Shinzou Wo Sasageyo!</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="3 сезон 1 часть" data-src="video/season3/episode1.mkv">
+            <div class="track-thumb">
+              <img src="img/op4.webp" alt="Red Swan" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">3 сезон · ч. 1</div>
+              <div class="track-name">Red Swan</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="3 сезон 2 часть" data-src="video/season3/episode2.mkv">
+            <div class="track-thumb">
+              <img src="img/op5.webp" alt="Shoukei to Shikabane no Michi" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">3 сезон · ч. 2</div>
+              <div class="track-name">Shoukei to Shikabane no Michi</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="4 сезон 1 часть" data-src="video/season4/episode1.mkv">
+            <div class="track-thumb">
+              <img src="img/op6.webp" alt="My War" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 1</div>
+              <div class="track-name">My War</div>
+            </div>
+          </li>
+
+          <li class="track-item is-playing" data-type="Опенинг" data-label="4 сезон 2 часть" data-src="video/season4/episode2.mkv">
+            <div class="track-thumb">
+              <img src="img/op7.webp" alt="The Rumbling" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 2</div>
+              <div class="track-name">The Rumbling</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Опенинг" data-label="4 сезон 3 часть" data-src="video/season4/episode3.mkv">
+            <div class="track-thumb">
+              <img src="img/op8.webp" alt="The Last Titan" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 3</div>
+              <div class="track-name">The Last Titan</div>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="section-title" style="margin-top: 4rem;">
+          <h2>Эндинги</h2>
+          <div class="section-title__line"></div>
+        </div>
+
+        <ul class="tracks-grid">
+
+          <li class="track-item" data-type="Эндинг" data-label="1 сезон 1 часть" data-src="video/season1/episode21.mkv">
+            <div class="track-thumb">
+              <img src="img/en1.webp" alt="The Beautiful and Cruel World" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">1 сезон · ч. 1</div>
+              <div class="track-name">The Beautiful and Cruel World</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="1 сезон 2 часть" data-src="video/season1/episode22.mkv">
+            <div class="track-thumb">
+              <img src="img/en2.webp" alt="The Great Escape" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">1 сезон · ч. 2</div>
+              <div class="track-name">The Great Escape</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="2 сезон" data-src="video/season2/episode21.mkv">
+            <div class="track-thumb">
+              <img src="img/en3.webp" alt="Bird at Dusk" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">2 сезон</div>
+              <div class="track-name">Bird at Dusk</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="3 сезон 1 часть" data-src="video/season3/episode21.mkv">
+            <div class="track-thumb">
+              <img src="img/en4.webp" alt="Akatsuki no Requiem" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">3 сезон · ч. 1</div>
+              <div class="track-name">Akatsuki no Requiem</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="3 сезон 2 часть" data-src="video/season3/episode22.mkv">
+            <div class="track-thumb">
+              <img src="img/en5.webp" alt="Name of Love" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">3 сезон · ч. 2</div>
+              <div class="track-name">Name of Love</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="4 сезон 1 часть" data-src="video/season4/episode21.mkv">
+            <div class="track-thumb">
+              <img src="img/en6.webp" alt="Shock" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 1</div>
+              <div class="track-name">Shock</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="4 сезон 2 часть" data-src="video/season4/episode22.mkv">
+            <div class="track-thumb">
+              <img src="img/en7.webp" alt="Akuma no Ko" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 2</div>
+              <div class="track-name">Akuma no Ko</div>
+            </div>
+          </li>
+
+          <li class="track-item" data-type="Эндинг" data-label="4 сезон 3 часть" data-src="video/season4/episode23.mkv">
+            <div class="track-thumb">
+              <img src="img/en8.webp" alt="Itterasshai" loading="lazy" decoding="async">
+              <div class="track-play"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="track-body">
+              <div class="track-label">4 сезон · ч. 3</div>
+              <div class="track-name">Itterasshai</div>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__copy">Студенческий учебный проект, не является официальным сайтом. Некоммерческий фанатский проект по манге «Атака титанов» Хадзимэ Исаямы. Все права на оригинальные материалы принадлежат их правообладателям.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="../js/enhance.js"></script>
+</body>
+</html>

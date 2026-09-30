@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script>try{if(!sessionStorage.getItem('aotLoaded')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},5000)}}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Викторина — Атака Титанов</title>
+  <meta name="description" content="Пройди короткую викторину и узнай, кто ты из Разведкорпуса «Атаки титанов».">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="../img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Атака Титанов — студенческий проект">
+  <meta property="og:title" content="Викторина — Атака Титанов">
+  <meta property="og:description" content="Пройди короткую викторину и узнай, кто ты из Разведкорпуса «Атаки титанов».">
+  <meta property="og:url" content="https://baelluu.github.io/attackontitan/quiz/">
+  <meta property="og:image" content="https://baelluu.github.io/attackontitan/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/enhance.css">
+  <link rel="stylesheet" href="../css/inner.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__logo">
+      <img src="../img/logo.png" alt="Attack on Titan">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="../serial/index.html">Сериал</a></li>
+      <li><a href="../characters/index.html">Персонажи</a></li>
+      <li><a href="../music/index.html">Музыка</a></li>
+      <li><a href="../arts/index.html">Галерея</a></li>
+      <li><a href="../quiz/index.html" class="active">Викторина</a></li>
+    </ul>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="navbar__drawer" id="drawer">
+    <a href="../serial/index.html">Сериал</a>
+    <a href="../characters/index.html">Персонажи</a>
+    <a href="../music/index.html">Музыка</a>
+    <a href="../arts/index.html">Галерея</a>
+    <a href="../quiz/index.html">Викторина</a>
+  </div>
+
+  <div class="quiz-layout">
+    <header class="page-hero" style="--hero-img:url('../img/header.webp')">
+      <div class="page-hero__eyebrow">Тест на 7 вопросов</div>
+      <h1 class="page-hero__title">Кто ты из Разведкорпуса?</h1>
+      <p class="page-hero__sub">Ответь на несколько вопросов, и мы подберём тебе героя, который больше всего на тебя похож.</p>
+    </header>
+
+    <main class="quiz" id="quiz">
+      <section class="quiz__card" id="quizCard" aria-live="polite">
+        <div class="quiz__progress"><span id="quizBar"></span></div>
+        <p class="quiz__step" id="quizStep"></p>
+        <h2 class="quiz__question" id="quizQuestion"></h2>
+        <div class="quiz__options" id="quizOptions"></div>
+      </section>
+
+      <section class="result" id="quizResult" hidden>
+        <div class="result__img" id="resultImg" role="img"></div>
+        <div class="result__body">
+          <p class="result__eyebrow">Твой результат</p>
+          <h2 class="result__name" id="resultName"></h2>
+          <p class="result__role" id="resultRole"></p>
+          <p class="result__text" id="resultText"></p>
+          <p class="result__second" id="resultSecond"></p>
+          <div class="result__actions">
+            <button class="btn btn--primary" id="quizRestart" type="button"><i class="fas fa-redo"></i> Пройти ещё раз</button>
+            <button class="btn btn--outline" id="quizCopy" type="button"><i class="fas fa-copy"></i> Скопировать результат</button>
+            <a class="btn btn--outline" href="../characters/index.html">Все персонажи <i class="fas fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p class="footer__copy">Студенческий учебный проект, не является официальным сайтом. Некоммерческий фанатский проект по манге «Атака титанов» Хадзимэ Исаямы. Все права на оригинальные материалы принадлежат их правообладателям.</p>
+  </footer>
+
+  <script src="js/quiz.js"></script>
+  <script src="../js/enhance.js"></script>
+</body>
+</html>

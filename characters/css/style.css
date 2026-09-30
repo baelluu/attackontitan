@@ -1,0 +1,205 @@
+/* ===== SPOTLIGHT ===== */
+.spotlight {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+/* The slide container — holds all items absolutely */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Every item */
+.item {
+  position: absolute;
+  top: 0; left: 0;
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center top;
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(60%, -50%);
+  top: 50%;
+}
+
+/* Item 1 & 2 = full screen (stacked) */
+.item:nth-child(1),
+.item:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: none;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Item 3 = peeking from the right */
+.item:nth-child(3) {
+  left: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 280px;
+  border-radius: 16px;
+  opacity: 1;
+  box-shadow: -30px 0 60px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+/* Item 4+ = hidden to the right */
+.item:nth-child(n + 4) {
+  left: calc(70% + 200px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Gradient overlay on active slide */
+.item:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.05) 100%),
+    linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  z-index: 0;
+}
+
+/* Character info — only shown on item 2 */
+.content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  max-width: 420px;
+  z-index: 1;
+  color: #fff;
+}
+
+.item:nth-child(2) .content {
+  display: block;
+}
+
+/* Animations matching original concept */
+.content .role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: spotAnimate 0.6s ease-out 0.1s 1 forwards;
+}
+
+.content .name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: spotAnimate 0.6s ease-out 0.25s 1 forwards;
+}
+
+.content .des {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: spotAnimate 0.6s ease-out 0.4s 1 forwards;
+}
+
+.content .spot-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: spotAnimate 0.6s ease-out 0.55s 1 forwards;
+}
+
+@keyframes spotAnimate {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ===== CONTROLS ===== */
+.spot-controls {
+  position: absolute;
+  bottom: 3rem;
+  left: 60px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spot-btn {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+.spot-btn:hover {
+  border-color: #c0392b;
+  background: rgba(192,57,43,0.2);
+  transform: scale(1.1);
+}
+
+.spot-counter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .content {
+    left: 1.5rem;
+    max-width: 85vw;
+    top: auto;
+    bottom: 8rem;
+    transform: none;
+  }
+  .item:nth-child(3) {
+    display: none;
+  }
+  .spot-controls {
+    left: 1.5rem;
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content .name { font-size: 2.2rem; }
+  .content .des  { font-size: 0.88rem; }
+}

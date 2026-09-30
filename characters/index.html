@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script>try{if(!sessionStorage.getItem('aotLoaded')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},5000)}}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Персонажи — Атака Титанов</title>
+  <meta name="description" content="Герои «Атаки титанов»: слайдер, поиск и фильтры по фракции и титану.">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="../img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Атака Титанов — студенческий проект">
+  <meta property="og:title" content="Персонажи — Атака Титанов">
+  <meta property="og:description" content="Герои «Атаки титанов»: слайдер, поиск и фильтры по фракции и титану.">
+  <meta property="og:url" content="https://baelluu.github.io/attackontitan/characters/">
+  <meta property="og:image" content="https://baelluu.github.io/attackontitan/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/enhance.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/inner.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="navbar__logo">
+      <img src="../img/logo.png" alt="Attack on Titan">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="../serial/index.html">Сериал</a></li>
+      <li><a href="../characters/index.html" class="active">Персонажи</a></li>
+      <li><a href="../music/index.html">Музыка</a></li>
+      <li><a href="../arts/index.html">Галерея</a></li>
+      <li><a href="../quiz/index.html">Викторина</a></li>
+    </ul>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="navbar__drawer" id="drawer">
+    <a href="../serial/index.html">Сериал</a>
+    <a href="../characters/index.html">Персонажи</a>
+    <a href="../music/index.html">Музыка</a>
+    <a href="../arts/index.html">Галерея</a>
+    <a href="../quiz/index.html">Викторина</a>
+  </div>
+
+  <!-- SPOTLIGHT SLIDER -->
+  <div class="spotlight" id="spotlight">
+
+    <div class="slide" id="slide">
+      <!-- Items are built by JS -->
+    </div>
+
+    <div class="spot-progress"><span id="spotProgress"></span></div>
+
+    <div class="spot-controls">
+      <button class="spot-btn prev" id="spotPrev" aria-label="Предыдущий">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <div class="spot-counter" id="spotCounter">01 / 14</div>
+      <button class="spot-btn next" id="spotNext" aria-label="Следующий">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <a class="spot-all" href="#roster">Все персонажи <i class="fas fa-chevron-down"></i></a>
+
+  </div>
+
+  <!-- ROSTER: search + filters -->
+  <section class="roster" id="roster">
+    <div class="container">
+      <div class="section-title">
+        <h2>Все персонажи</h2>
+        <div class="section-title__line"></div>
+      </div>
+
+      <div class="roster__controls">
+        <label class="roster__search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="rosterSearch" placeholder="Поиск по имени или роли" aria-label="Поиск персонажа" autocomplete="off">
+        </label>
+        <div class="roster__group" role="group" aria-label="Фракция" id="factionChips"></div>
+        <div class="roster__group" role="group" aria-label="Титан" id="titanChips"></div>
+      </div>
+
+      <p class="roster__count" id="rosterCount" aria-live="polite"></p>
+      <ul class="roster__grid" id="rosterGrid"></ul>
+      <p class="roster__empty" id="rosterEmpty" hidden>Никого не нашли. Попробуй сбросить фильтры.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copy">Студенческий учебный проект, не является официальным сайтом. Некоммерческий фанатский проект по манге «Атака титанов» Хадзимэ Исаямы. Все права на оригинальные материалы принадлежат их правообладателям.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="../js/enhance.js"></script>
+</body>
+</html>

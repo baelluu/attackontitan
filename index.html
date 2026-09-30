@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <script>try{if(!sessionStorage.getItem('aotLoaded')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('is-loading');setTimeout(function(){document.documentElement.classList.remove('is-loading')},5000)}}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Атака Титанов — Студенческий проект</title>
+  <meta name="description" content="Студенческий проект по «Атаке титанов»: сериал, персонажи, музыка, галерея, викторина. Некоммерческий фанатский сайт.">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Атака Титанов — студенческий проект">
+  <meta property="og:title" content="Атака Титанов — Студенческий проект">
+  <meta property="og:description" content="Студенческий проект по «Атаке титанов»: сериал, персонажи, музыка, галерея, викторина. Некоммерческий фанатский сайт.">
+  <meta property="og:url" content="https://baelluu.github.io/attackontitan/">
+  <meta property="og:image" content="https://baelluu.github.io/attackontitan/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/enhance.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <img src="img/logo.png" alt="Attack on Titan">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="serial/index.html">Сериал</a></li>
+      <li><a href="characters/index.html">Персонажи</a></li>
+      <li><a href="music/index.html">Музыка</a></li>
+      <li><a href="arts/index.html">Галерея</a></li>
+      <li><a href="quiz/index.html">Викторина</a></li>
+    </ul>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Открыть меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="navbar__drawer" id="drawer">
+    <a href="serial/index.html">Сериал</a>
+    <a href="characters/index.html">Персонажи</a>
+    <a href="music/index.html">Музыка</a>
+    <a href="arts/index.html">Галерея</a>
+    <a href="quiz/index.html">Викторина</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__noise"></div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+      <div class="hero__year-badge">2013 — 2023</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Атака</span>
+        <span class="hero__title-line hero__title-line--accent">Титанов</span>
+      </h1>
+      <p class="hero__jp">進撃の巨人</p>
+      <p class="hero__sub">Судьба человечества в ваших руках</p>
+      <a href="serial/index.html" class="btn btn--primary hero__cta">
+        <i class="fas fa-play"></i> Смотреть сериал
+      </a>
+    </div>
+
+    <a href="#quote" class="hero__scroll" aria-label="Прокрутить вниз"><span></span></a>
+
+    <!-- Ticker belt at bottom of hero -->
+    <div class="ticker-belt" aria-hidden="true">
+      <div class="ticker-inner" id="tickerInner">
+        <span>4 сезона</span><span class="ticker-sep">◆</span>
+        <span>89 серий</span><span class="ticker-sep">◆</span>
+        <span>С 2013 года</span><span class="ticker-sep">◆</span>
+        <span>Хадзимэ Исаяма</span><span class="ticker-sep">◆</span>
+        <span>Shingeki no Kyojin</span><span class="ticker-sep">◆</span>
+        <span>Разведывательный корпус</span><span class="ticker-sep">◆</span>
+        <span>Сражайся или умри</span><span class="ticker-sep">◆</span>
+        <span>4 сезона</span><span class="ticker-sep">◆</span>
+        <span>89 серий</span><span class="ticker-sep">◆</span>
+        <span>С 2013 года</span><span class="ticker-sep">◆</span>
+        <span>Хадзимэ Исаяма</span><span class="ticker-sep">◆</span>
+        <span>Shingeki no Kyojin</span><span class="ticker-sep">◆</span>
+        <span>Разведывательный корпус</span><span class="ticker-sep">◆</span>
+        <span>Сражайся или умри</span><span class="ticker-sep">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats reveal-stagger" aria-label="Атака титанов в цифрах">
+    <div class="stats__item"><span class="stats__num" data-count="4">4</span><span class="stats__label">сезона</span></div>
+    <div class="stats__item"><span class="stats__num" data-count="89">89</span><span class="stats__label">серий</span></div>
+    <div class="stats__item"><span class="stats__num" data-count="139">139</span><span class="stats__label">глав манги</span></div>
+    <div class="stats__item"><span class="stats__num" data-count="2009">2009</span><span class="stats__label">год начала манги</span></div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section" id="quote">
+    <div class="quote-section__line-left"></div>
+    <blockquote class="quote">
+      <p class="quote__text">
+        «Борись! Проиграешь — умрёшь, победишь — выживешь!<br>
+        Если не бороться — не победить!»
+      </p>
+      <cite class="quote__author">— Эрен Йегер</cite>
+    </blockquote>
+    <div class="quote-section__line-right"></div>
+  </section>
+
+  <!-- SEASONS / TIMELINE -->
+  <section class="seasons" id="seasons">
+    <div class="container">
+      <div class="section-title">
+        <h2>Сюжет и сезоны</h2>
+        <div class="section-title__line"></div>
+      </div>
+      <p class="lead">Человечество давно живёт за тремя стенами, спасаясь от гигантских титанов. Но однажды стена не выдерживает, и для Эрена и его друзей начинается борьба за свободу. Без спойлеров: вот как разворачивается история.</p>
+      <ol class="timeline reveal-stagger">
+        <li class="timeline__item">
+          <span class="timeline__year">2013</span>
+          <h3>Сезон 1</h3>
+          <p class="timeline__meta">25 серий</p>
+          <p>Падение стены Мария и первые шаги в Разведкорпус.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2017</span>
+          <h3>Сезон 2</h3>
+          <p class="timeline__meta">12 серий</p>
+          <p>Угроза оказывается ближе, чем казалось: бой за стену Роза.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2018–2019</span>
+          <h3>Сезон 3</h3>
+          <p class="timeline__meta">22 серии</p>
+          <p>Интриги внутри стен и поиск правды о мире.</p>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__year">2020–2023</span>
+          <h3>Сезон 4</h3>
+          <p class="timeline__meta">30 серий</p>
+          <p>Финал истории и цена свободы.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <main>
+    <div class="container">
+      <div class="features">
+
+        <article class="feature reveal">
+          <div class="feature__num" aria-hidden="true">01</div>
+          <div class="feature__media">
+            <img src="img/armin.webp" alt="Персонажи" class="feature__img" loading="lazy" decoding="async">
+            <div class="feature__media-label">Персонажи</div>
+          </div>
+          <div class="feature__body">
+            <h2 class="feature__title">Знакомьтесь<br>с персонажами</h2>
+            <p class="feature__text">Встречайте отважных солдат, вступивших в безнадёжную борьбу против таинственных титанов, стремящихся уничтожить человеческую расу.</p>
+            <a href="characters/index.html" class="btn btn--outline">
+              Герои истории <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="feature feature--rev reveal">
+          <div class="feature__num" aria-hidden="true">02</div>
+          <div class="feature__media">
+            <img src="img/music.webp" alt="Музыка" class="feature__img" loading="lazy" decoding="async">
+            <div class="feature__media-label">Музыка</div>
+          </div>
+          <div class="feature__body">
+            <h2 class="feature__title">Услышьте<br>этот мир</h2>
+            <p class="feature__text">Ощутите мрачную атмосферу через захватывающие музыкальные композиции — от динамичных опенингов до проникновенных саундтреков.</p>
+            <a href="music/index.html" class="btn btn--outline">
+              Музыка <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="feature reveal">
+          <div class="feature__num" aria-hidden="true">03</div>
+          <div class="feature__media">
+            <img src="img/gallery.webp" alt="Галерея" class="feature__img" loading="lazy" decoding="async">
+            <div class="feature__media-label">Галерея</div>
+          </div>
+          <div class="feature__body">
+            <h2 class="feature__title">Восхититесь<br>пейзажами</h2>
+            <p class="feature__text">Завораживающие иллюстрации — от зловещих руин человеческих поселений до величественных стен, ограждающих людей от гигантских тварей.</p>
+            <a href="arts/index.html" class="btn btn--outline">
+              Галерея <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FACTIONS -->
+  <section class="factions" id="factions">
+    <div class="container">
+      <div class="section-title">
+        <h2>Фракции и стены</h2>
+        <div class="section-title__line"></div>
+      </div>
+      <div class="factions__grid">
+        <div class="factions__left">
+          <div class="tabs" role="tablist" aria-label="Фракции">
+            <button class="tab is-active" role="tab" id="tab-scout" aria-selected="true" aria-controls="panel-scout" data-ring="out">Разведкорпус</button>
+            <button class="tab" role="tab" id="tab-garrison" aria-selected="false" aria-controls="panel-garrison" data-ring="walls" tabindex="-1">Гарнизон</button>
+            <button class="tab" role="tab" id="tab-mp" aria-selected="false" aria-controls="panel-mp" data-ring="sina" tabindex="-1">Военная полиция</button>
+          </div>
+          <div class="tabpanel is-active" role="tabpanel" id="panel-scout" aria-labelledby="tab-scout">
+            <img class="tabpanel__crest" src="img/faction-scout.webp" alt="Герб Разведкорпуса: Крылья свободы" width="246" height="320" loading="lazy">
+            <div class="tabpanel__text">
+              <h3>Разведкорпус</h3>
+            <p>Единственный отряд, который выходит за стены. Его солдаты изучают мир титанов и платят за это самую высокую цену. Эмблема — «Крылья свободы».</p>
+            </div>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-garrison" aria-labelledby="tab-garrison" hidden>
+            <img class="tabpanel__crest" src="img/faction-garrison.webp" alt="Герб Гарнизона: розы" width="250" height="320" loading="lazy">
+            <div class="tabpanel__text">
+              <h3>Гарнизон</h3>
+            <p>Охраняет стены и города, следит за воротами и артиллерией. Именно гарнизон первым встречает угрозу, когда стена перестаёт быть защитой.</p>
+            </div>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-mp" aria-labelledby="tab-mp" hidden>
+            <img class="tabpanel__crest" src="img/faction-mp.webp" alt="Герб Военной полиции: единорог" width="271" height="320" loading="lazy">
+            <div class="tabpanel__text">
+              <h3>Военная полиция</h3>
+            <p>Элита, которая служит в глубине страны, в столице за стеной Сина, охраняет короля и порядок. Мечта многих курсантов — попасть сюда.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="walls" aria-label="Схема стен" data-ring="out">
+          <svg viewBox="0 0 480 500" class="walls__svg" role="img" aria-label="Схема стен: Мария, Роза, Сина и города у ворот">
+            <circle class="ring ring--out" cx="240" cy="240" r="238" />
+            <g class="wall wall--maria"><circle class="ring" cx="240" cy="240" r="212"/><path class="gate" d="M224 28A16 16 0 0 1 256 28M452 224A16 16 0 0 1 452 256M256 452A16 16 0 0 1 224 452M28 256A16 16 0 0 1 28 224"/></g>
+            <g class="wall wall--rose"><circle class="ring" cx="240" cy="240" r="142"/><path class="gate" d="M224 98A16 16 0 0 1 256 98M382 224A16 16 0 0 1 382 256M256 382A16 16 0 0 1 224 382M98 256A16 16 0 0 1 98 224"/></g>
+            <g class="wall wall--sina"><circle class="ring" cx="240" cy="240" r="72"/><path class="gate" d="M224 168A16 16 0 0 1 256 168M312 224A16 16 0 0 1 312 256M256 312A16 16 0 0 1 224 312M168 256A16 16 0 0 1 168 224"/></g>
+            <rect class="mitras" x="223" y="223" width="34" height="34" rx="3" />
+            <g class="cities" text-anchor="middle">
+              <text x="240" y="243" class="city city--core">Митрас</text>
+              <text x="240" y="146" class="city">Орвуд</text>
+              <text x="334" y="243" text-anchor="start" class="city">Стохес</text>
+              <text x="240" y="342" class="city">Эрмих</text>
+              <text x="146" y="243" text-anchor="end" class="city">Яркил</text>
+              <text x="240" y="76" class="city">Утопия</text>
+              <text x="404" y="243" text-anchor="start" class="city">Каранес</text>
+              <text x="240" y="412" class="city">Трост</text>
+              <text x="76" y="243" text-anchor="end" class="city">Кровла</text>
+              <text x="240" y="482" class="city">Шиганшина</text>
+            </g>
+            <g class="wall-names">
+              <text x="392" y="406" class="wn wn--maria">Стена Мария</text>
+              <text x="312" y="352" class="wn wn--rose">Стена Роза</text>
+              <text x="268" y="302" class="wn wn--sina">Стена Сина</text>
+            </g>
+          </svg>
+          <figcaption>Три кольца стен вокруг столицы Митрас. У каждых ворот стоит свой город.</figcaption>
+        </figure>
+      </div>
+
+      <div class="crests reveal-stagger">
+        <article class="crest" data-ring="maria" tabindex="0">
+          <img src="img/wall-maria.png" alt="Герб стены Мария" loading="lazy" width="208" height="278">
+          <div><h3>Стена Мария</h3><p>Внешняя и самая большая стена. Первой встречает всё, что приходит извне.</p></div>
+        </article>
+        <article class="crest" data-ring="rose" tabindex="0">
+          <img src="img/wall-rose.png" alt="Герб стены Роза" loading="lazy" width="208" height="278">
+          <div><h3>Стена Роза</h3><p>Средняя стена: за ней жизнь идёт спокойнее, а города богаче.</p></div>
+        </article>
+        <article class="crest" data-ring="sina" tabindex="0">
+          <img src="img/wall-sina.png" alt="Герб стены Сина" loading="lazy" width="208" height="278">
+          <div><h3>Стена Сина</h3><p>Внутренняя стена вокруг столицы Митрас, где живут король и знать.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TITANS -->
+  <section class="titans" id="titans">
+    <div class="container">
+      <div class="section-title">
+        <h2>Титаны</h2>
+        <div class="section-title__line"></div>
+      </div>
+      <p class="lead">Девять титанов-перевертышей наследуются людьми, а остальных титанов разделяют по типам.</p>
+      <ul class="titan-grid reveal-stagger">
+        <li class="titan"><img class="titan__art" src="img/titans/attack.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Атакующий</b><span>Титан, вечно рвущийся вперёд.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/armored.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Бронированный</b><span>Твёрдая броня по всему телу.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/colossal.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Колоссальный</b><span>Гигантский рост и обжигающий пар.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/female.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Женская особь</b><span>Ловкий боец, способный кристаллизоваться.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/founder.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Прародитель</b><span>Власть над остальными титанами.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/hammer.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Молотобоец</b><span>Оружие, созданное из кристалла.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/beast.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Звероподобный</b><span>Разум и власть над низшими титанами.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/cart.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Титан-перевозчик</b><span>Выносливость, способная тащить груз.</span></li>
+        <li class="titan"><img class="titan__art" src="img/titans/jaw.webp" alt="" loading="lazy" decoding="async" width="285" height="300"><b>Титан-челюсти</b><span>Скорость, когти и мощные челюсти.</span></li>
+      </ul>
+      <div class="titan-kinds reveal-stagger">
+        <div><h3>Аномальные</h3><p>Ведут себя непредсказуемо: не идут напролом и не следуют привычным повадкам.</p></div>
+        <div><h3>Чистые</h3><p>Обычные титаны без разума. Они не едят ради еды, а охотятся только на людей.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container about__grid">
+      <div class="about__head reveal">
+        <p class="about__eyebrow">О проекте</p>
+        <h2 class="about__title">Многостраничный сайт с нуля</h2>
+      </div>
+      <div class="about__body reveal">
+        <p>Учебный проект: адаптивный сайт по вселенной «Атаки титанов» с плеером серий, слайдером персонажей, музыкальным разделом и галереей иллюстраций.</p>
+        <ul class="chips">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Swiper</li><li>Адаптивная вёрстка</li><li>Анимации</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__copy">Студенческий учебный проект, не является официальным сайтом. Некоммерческий фанатский проект по манге «Атака титанов» Хадзимэ Исаямы. Все права на оригинальные материалы принадлежат их правообладателям.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="js/enhance.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* ===== LAYOUT ===== */
+.serial-layout {
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+/* ===== PLAYER ===== */
+.player-section {
+  background: #000;
+  border-bottom: 1px solid var(--border);
+}
+
+.player-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0;
+}
+
+.player-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #000;
+  display: block;
+}
+
+.player-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.player-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.player-title {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== EPISODES ===== */
+.episodes-section {
+  padding: 3.5rem 0 5rem;
+}
+
+.episodes-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.episodes-heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--text);
+}
+
+/* Season tabs */
+.season-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.season-tab {
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--tr);
+}
+.season-tab:hover { border-color: var(--accent); color: var(--text); }
+.season-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Episode grid */
+.episode-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.episode-item {
+  cursor: pointer;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+}
+.episode-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  border-color: rgba(192,57,43,0.3);
+}
+.episode-item.is-playing {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(192,57,43,0.25);
+}
+
+/* Hidden initially (show-more) */
+.episode-item.is-hidden { display: none; }
+
+.episode-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.episode-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.episode-item:hover .episode-thumb img { transform: scale(1.07); }
+
+.episode-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.25s;
+  font-size: 2.2rem;
+  color: rgba(255,255,255,0.9);
+}
+.episode-item:hover .episode-play-icon,
+.episode-item.is-playing .episode-play-icon { opacity: 1; }
+
+.episode-body {
+  padding: 0.9rem 1rem;
+}
+.episode-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.episode-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Show more button */
+.episodes-more {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+.show-more-btn { display: none; }
+.show-more-btn.is-visible { display: inline-flex; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .episode-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 680px) {
+  .episode-grid { grid-template-columns: repeat(2, 1fr); }
+  .episodes-head { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 400px) {
+  .episode-grid { grid-template-columns: 1fr; }
+}
